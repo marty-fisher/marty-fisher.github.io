@@ -9,18 +9,19 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
+      background-color: #000; /* Optional: adds a nice dark background behind the image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    img {
+      max-width: 100vw;
+      max-height: 100vh;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
-  <iframe src="marty-media-kit.pdf#view=Fit" title="Media Kit">
-    <p>Your browser does not support PDFs. <a href="marty-media-kit.pdf">Download the PDF</a>.</p>
-  </iframe>
+  <img src="marty-media-kit.png" alt="Marty Fisher Media Kit">
 </body>
 </html>
