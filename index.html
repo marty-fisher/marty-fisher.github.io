@@ -1,27 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Marty Fisher - Media Kit</title>
+  <title>@martyfisher_ — Media Kit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Media kit for @martyfisher_ — putting eyeballs on skateboarding. Brand partnerships & UGC campaigns.">
   <style>
-    body, html {
+    :root {
+      --bg: #0c0d0f;
+      --panel: #15171a;
+      --panel-2: #1a1d21;
+      --border: #26292e;
+      --text: #e6e7e9;
+      --muted: #8b8f96;
+      --green: #2ee46a;
+      --green-dim: #1f9f4d;
+      --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background-color: #000; /* Optional: adds a nice dark background behind the image */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    img {
-      max-width: 100vw;
-      max-height: 100vh;
-      object-fit: contain;
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* ---- header ---- */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 35%, #ffb347, #f7931e);
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      color: transparent; /* hides broken image alt text */
+    }
+
+    .handle {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .tagline {
+      color: var(--muted);
+      margin: 2px 0 0;
+      font-size: 1.05rem;
+    }
+
+    /* ---- section ---- */
+    section { border-top: 1px solid var(--border); margin-top: 40px; padding-top: 32px; }
+    .section-title {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+    .section-title::before { content: "› "; color: var(--green); }
+
+    /* ---- stats ---- */
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 32px;
+    }
+    .stat .num {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1.1;
+    }
+    .stat .num.white { color: var(--text); }
+    .stat .label { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+
+    /* ---- audience ---- */
+    .audience-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .audience-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 1.1rem;
+    }
+    .audience-list strong {
+      color: var(--green);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .audience-list .sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ---- capabilities ---- */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .card:hover { border-color: var(--green-dim); transform: translateY(-2px); }
+    .card h3 { color: var(--green); font-size: 1rem; margin: 0 0 10px; }
+    .card p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+    .card .u { color: var(--text); border-bottom: 1px solid var(--green-dim); }
+
+    /* ---- cta ---- */
+    .cta { text-align: center; }
+    .cta .email {
+      font-size: 1.5rem;
+      color: var(--text);
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .cta .email .bracket { color: var(--green); }
+    .cta p { color: var(--muted); margin: 0; }
+
+    /* ---- footer links ---- */
+    .links {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 40px 18px 64px; }
+      .handle { font-size: 1.6rem; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .audience-list { gap: 16px; flex-direction: column; }
+      .cards { grid-template-columns: 1fr; }
+      .cta .email { font-size: 1.25rem; }
     }
   </style>
 </head>
 <body>
-  <img src="marty-media-kit053126.png" alt="Marty Fisher Media Kit">
+  <main class="wrap">
+
+    <header class="header">
+      <div class="avatar">
+        <img src="pfp.jpeg" alt="@martyfisher_">
+      </div>
+      <div>
+        <h1 class="handle">@martyfisher_</h1>
+        <p class="tagline">putting eyeballs on skateboarding</p>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">reach &amp; performance</h2>
+      <div class="stats">
+        <div class="stat">
+          <div class="num">1 mil +</div>
+          <div class="label">accounts reached per month</div>
+        </div>
+        <div class="stat">
+          <div class="num">20K – 400K+</div>
+          <div class="label">views per video</div>
+        </div>
+        <div class="stat">
+          <div class="num white">&gt;90%</div>
+          <div class="label">skateboarding demographic</div>
+        </div>
+        <div class="stat">
+          <div class="num white">+1300</div>
+          <div class="label">followers &amp; growing</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">audience breakdown</h2>
+      <div class="audience-list">
+        <li><strong>&gt;95%</strong> Male</li>
+        <li><strong>&gt;80%</strong> Age 18–34</li>
+        <li>
+          <strong>&gt;50%</strong> US 
+          <span class="sub">+ UK / BR / FR / CA</span>
+        </li>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">partnership capabilities</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Virtual vs. Reality Integrations</h3>
+          <p>Seamlessly featuring your physical decks, footwear, and apparel on in-game characters for highly-engaged product showcases.</p>
+        </div>
+        <div class="card">
+          <h3>High-Velocity UGC Creation</h3>
+          <p>Fast-paced, <span class="u">algorithm-optimized</span> short-form video edits designed to drive traffic to your storefront.</p>
+        </div>
+        <div class="card">
+          <h3>Whitelisting &amp; Ad Licensing</h3>
+          <p>Full usage rights allowing your brand to run my viral, high-converting edits as paid ads on your own channels.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <a class="email" href="mailto:marty@dawnstate.xyz"><span class="bracket">[</span>marty@dawnstate.xyz<span class="bracket">]</span></a>
+      <p>Currently accepting Q3 brand partnerships &amp; UGC campaigns.</p>
+      <p>Let's build something iconic.</p>
+    </section>
+
+    <footer class="links">
+      <a href="https://dawnstate.xyz">dawnstate.xyz</a>
+      <a href="https://shelltoho.me">shelltoho.me</a>
+    </footer>
+
+  </main>
 </body>
 </html>
