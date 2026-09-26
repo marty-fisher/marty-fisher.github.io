@@ -1,0 +1,16 @@
+{
+  "tagline": "putting eyeballs on skateboarding",
+  "stats": [
+    { "value": "190K", "label": "avg views per reel" },
+    { "value": "1M", "label": "accounts reached per month" }
+  ],
+  "links": [
+    { "label": "INSTAGRAM", "href": "https://www.instagram.com/martyfisher_/", "name": "Instagram @martyfisher_" },
+    { "label": "TIKTOK", "href": "https://www.tiktok.com/@martyfisher_", "name": "TikTok @martyfisher_" }
+  ],
+  "site": {
+    "url": "https://marty-fisher.github.io/",
+    "title": "Marty Fisher",
+    "description": "Putting eyeballs on skateboarding. Flip the board."
+  }
+}
